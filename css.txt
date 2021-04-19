@@ -1,0 +1,166 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+}
+
+.bg-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    margin-bottom: 6px;
+}
+
+@media (min-width:768px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+    }
+}
+
+.line {
+    color: #e7e5ea;
+    border-style: solid;
+    border-width: 1px;
+    width: 100%;
+}
+
+@media (min-width:768px) {
+    .line {
+        display: none;
+    }
+}
+
+.icon {
+    display: none;
+}
+
+@media (min-width:768px) {
+    .icon1 {
+        display: none;
+    }
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.nav-items {
+    display: none;
+}
+
+@media (min-width:768px) {
+    .nav-items {
+        display: inline;
+        margin-right: 15px;
+    }
+}
+
+.nav-item {
+    text-decoration: none;
+    font-family: 'Open Sans';
+    font-size: 17px;
+    color: black;
+    margin-left: 15px;
+}
+
+.button {
+    background-color: #ffdda9;
+    width: 80px;
+    height: 35px;
+    border-width: 0px;
+    border-radius: 20px;
+    color: #12022f;
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 15px;
+    font-family: 'Roboto';
+}
+
+.bg-image {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background-image: url('https://www.techrepublic.com/a/hub/i/r/2015/09/30/f66fef72-5d57-48cc-bd8c-7ec0941e73ef/resize/770x/ac0363c3e414d51bafb1dd9b1c8a604a/dataanalysisistockrobuart.jpg');
+    background-size: cover;
+    flex-grow: 1;
+    min-height: 600px;
+}
+
+
+
+.heading {
+    font-family: 'Roboto';
+    font-size: 40px;
+    color: black;
+    align-self: center;
+    text-align: center;
+    font-style: italic;
+    font-weight: 600;
+}
+
+@media (min-width:768px) {
+    .heading {
+        font-size: 60px;
+    }
+}
+
+
+
+
+.card {
+    padding: 100px;
+    max-width: 762px;
+}
+
+.containerr {
+    width: 100%;
+    background-color: #ddd;
+}
+
+.skills {
+    text-align: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+}
+
+.by {
+    width: 90%;
+    background-color: #4CAF50;
+}
+
+
+.dirt {
+    width: 80%;
+    background-color: #2196F3;
+}
+
+
+.hotspot {
+    width: 65%;
+    background-color: #f44336;
+}
+
+
+.cell {
+    width: 60%;
+    background-color: #808080;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://kit.fontawesome.com/3b3c3e8036.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="bg-container">
+        <nav class="navbar">
+            <div class="icon-container">
+                <i class="fas fa-home"></i>
+                <i class="fas fa-bars icon1" id="menu"></i>
+                <i class="fas fa-times icon" id="delete"></i>
+            </div>
+            <div class="nav-items" id="items">
+                <hr class="line" />
+                <a href="#vf" class="nav-item">Anamoly Classification</a>
+                <hr class="line" />
+                <a href="https://summarypage.ccbp.tech/" class="nav-item">Summary</a>
+            </div>
+        </nav>
+        <div class="bg-image">
+            <h1 class="heading">Data analytics of thermal project</h1>
+        </div>
+
+        <div id="vf">
+            <div class="card">
+                <p>By Pass Diodes</p>
+                <div class="containerr">
+                    <div class="skills by" id="byPass">90%</div>
+                </div>
+
+                <p>Dirt/vegetation</p>
+                <div class="containerr">
+                    <div class="skills dirt" id="vegetation">80%</div>
+                </div>
+
+                <p>Hotspot</p>
+                <div class="containerr">
+                    <div class="skills hotspot" id="multiCell">65%</div>
+                </div>
+
+                <p>Broken glass</p>
+                <div class="containerr">
+                    <div class="skills cell" id="cellFailure">60%</div>
+                </div>
+
+                <p>Others</p>
+                <div class="containerr">
+                    <div class="skills by" id="others">60%</div>
+                </div>
+
+                <p>Short Circuit</p>
+                <div class="containerr">
+                    <div class="skills by" id="shortCircuit">60%</div>
+                </div>
+
+
+                <p>open Circuit</p>
+                <div class="containerr">
+                    <div class="skills by" id="openCircuit">60%</div>
+                </div>
+
+
+                <p>panel Failure</p>
+                <div class="containerr">
+                    <div class="skills by" id="panelFailure">60%</div>
+                </div>
+
+                <p>Module</p>
+                <div class="containerr">
+                    <div class="skills by" id="module">60%</div>
+                </div>
+
+                <p>Table</p>
+                <div class="containerr">
+                    <div class="skills by" id="table">60%</div>
+                </div>
+
+                <p>PID</p>
+                <div class="containerr">
+                    <div class="skills by" id="pid">60%</div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+let menuEl = document.getElementById("menu");
+let deleteEl = document.getElementById("delete");
+let itemsEl = document.getElementById("items");
+
+function changingBtn() {
+    menuEl.classList.toggle('icon');
+    deleteEl.classList.toggle('icon');
+    itemsEl.classList.toggle('nav-items');
+}
+menuEl.addEventListener('click', changingBtn);
+deleteEl.addEventListener('click', changingBtn);
+
+
+
+var jsonData = {
+    "6": {
+        "project_id": 6,
+        "name": "hero_ichawar",
+        "dates": [
+            "2019-10-06"
+        ],
+        "kml_location": "None",
+        "location": "Ichhawar , Madhya Pradesh",
+        "plant_size": "50 MW",
+        "center": "",
+        "no_of_inverters": "",
+        "2019-10-06": {
+            "layers": {
+                "Hotspot": {
+                    "defect_type": "Hotspot",
+                    "Count": 5297,
+                    "kml": "Hotspot,Dirt_1,Dirt_2,Dirt_3,Dirt_4,Dirt_5,By_Pass_Diode_Issues,Broken_Glass",
+                    "color": "black",
+                    "sub_group": {
+                        "By Pass Diode Issues": {
+                            "defect_type": "Hotspot",
+                            "criticality": "By Pass Diode Issues",
+                            "Count": 3,
+                            "kml": "By_Pass_Diode_Issues",
+                            "color": "yellow"
+                        },
+                        "Dirt / Vegetation": {
+                            "defect_type": "Hotspot",
+                            "criticality": "Dirt / Vegetation",
+                            "Count": 4373,
+                            "kml": "Dirt_1,Dirt_2,Dirt_3,Dirt_4,Dirt_5",
+                            "color": "blue"
+                        },
+                        "Broken Glass": {
+                            "defect_type": "Hotspot",
+                            "criticality": "Broken Glass",
+                            "Count": 151,
+                            "kml": "Broken_Glass",
+                            "color": "red"
+                        },
+                        "Others": {
+                            "defect_type": "Hotspot",
+                            "criticality": "Others",
+                            "Count": 770,
+                            "kml": "Hotspot",
+                            "color": "green"
+                        }
+                    }
+                },
+                "Short Circuit": {
+                    "defect_type": "Short Circuit",
+                    "Count": 8,
+                    "kml": "Short_Circuit",
+                    "color": "blue",
+                    "sub_group": {}
+                },
+                "Open Circuit": {
+                    "defect_type": "Open Circuit",
+                    "Count": 474,
+                    "kml": "Open_Circuit",
+                    "color": "green",
+                    "sub_group": {}
+                },
+                "Panel Failure": {
+                    "defect_type": "Panel Failure",
+                    "Count": 136,
+                    "kml": "Panel_Failure,Open_String_Tables ",
+                    "color": "black",
+                    "sub_group": {
+                        "Module": {
+                            "defect_type": "Panel Failure",
+                            "criticality": "Module",
+                            "Count": 89,
+                            "kml": "Panel_Failure",
+                            "color": "red"
+                        },
+                        "Table": {
+                            "defect_type": "Panel Failure",
+                            "criticality": "Table",
+                            "Count": 47,
+                            "kml": "Open_String_Tables",
+                            "color": "orange"
+                        }
+                    }
+                },
+                "PID": {
+                    "defect_type": "PID",
+                    "Count": 14,
+                    "kml": "PID",
+                    "color": "yellow",
+                    "sub_group": {}
+                }
+            }
+        }
+    }
+};
+let hotspotCount = (jsonData['6']['2019-10-06'].layers.Hotspot.Count);
+let hotspotColor = (jsonData['6']['2019-10-06'].layers.Hotspot.color);
+let brokenglassCount = (jsonData['6']['2019-10-06'].layers.Hotspot.sub_group['Broken Glass'].Count);
+let brokenglassColor = (jsonData['6']['2019-10-06'].layers.Hotspot.sub_group['Broken Glass'].color);
+let othersCount = (jsonData['6']['2019-10-06'].layers.Hotspot.sub_group.Others.Count);
+let othersColor = (jsonData['6']['2019-10-06'].layers.Hotspot.sub_group.Others.color);
+let shortcircuitCount = (jsonData['6']['2019-10-06'].layers['Short Circuit'].Count);
+let shortcircuitColor = (jsonData['6']['2019-10-06'].layers['Short Circuit'].color);
+let opencircuitCount = (jsonData['6']['2019-10-06'].layers['Open Circuit'].Count);
+let opencircuitColor = (jsonData['6']['2019-10-06'].layers['Open Circuit'].color);
+let panelfailureCount = (jsonData['6']['2019-10-06'].layers['Panel Failure'].Count);
+let panelfailureColor = (jsonData['6']['2019-10-06'].layers['Panel Failure'].color);
+let pidCount = (jsonData['6']['2019-10-06'].layers.PID.Count);
+let pidColor = (jsonData['6']['2019-10-06'].layers.PID.color);
+let bypassdiodeCount = (jsonData['6']['2019-10-06'].layers.Hotspot.sub_group['By Pass Diode Issues'].Count);
+let vegetationCount = (jsonData['6']['2019-10-06'].layers.Hotspot.sub_group['Dirt / Vegetation'].Count);
+let moduleCount = (jsonData['6']['2019-10-06'].layers['Panel Failure'].sub_group.Module.Count);
+let moduleColor = (jsonData['6']['2019-10-06'].layers['Panel Failure'].sub_group.Module.color);
+let tableCount = (jsonData['6']['2019-10-06'].layers['Panel Failure'].sub_group.Table.Count);
+let tableColor = (jsonData['6']['2019-10-06'].layers['Panel Failure'].sub_group.Table.color);
+
+
+
+let bypassEl = document.getElementById("byPass");
+bypassEl.classList.add("by");
+let dirtEl = document.getElementById("vegetation");
+dirtEl.classList.add("dirt");
+let multicellEl = document.getElementById("multiCell");
+multicellEl.classList.add("hotspot");
+let cellfailureEl = document.getElementById("cellFailure");
+cellfailureEl.classList.add("cell");
+let othersEl = document.getElementById("others");
+othersEl.classList.add("by");
+let shortcircuitEl = document.getElementById("shortCircuit");
+shortcircuitEl.classList.add("by");
+let opencircuitEl = document.getElementById("openCircuit");
+opencircuitEl.classList.add("by");
+let panelfailureEl = document.getElementById("panelFailure");
+panelfailureEl.classList.add("by");
+let moduleEl = document.getElementById("module");
+moduleEl.classList.add("by");
+let tableEl = document.getElementById("table");
+tableEl.classList.add("by");
+let pidEl = document.getElementById("pid");
+pidEl.classList.add("by");
+
+
+
+
+
+
+let bypassCount = bypassEl.textContent = (bypassdiodeCount / 100) + "%";
+let bypassChart = bypassEl.style.width = bypassCount;
+
+let dirtCount = dirtEl.textContent = (vegetationCount / 100) + "%";
+let dirtChart = dirtEl.style.width = dirtCount;
+
+let multicellCount = multicellEl.textContent = (hotspotCount / 100) + "%";
+let multicellChart = multicellEl.style.width = multicellCount;
+let multicellColor = multicellEl.style.backgroundColor = hotspotColor;
+
+
+let cellfailureCount = cellfailureEl.textContent = (brokenglassCount / 100) + "%";
+let cellfailureChart = cellfailureEl.style.width = cellfailureCount;
+let cellfailureColor = cellfailureEl.style.backgroundColor = brokenglassColor;
+
+let otherCount = othersEl.textContent = (othersCount / 100) + "%";
+let otherChart = othersEl.style.width = otherCount;
+let otherColor = othersEl.style.backgroundColor = othersColor;
+
+let shortcCount = shortcircuitEl.textContent = (shortcircuitCount / 100) + "%";
+let shortcChart = shortcircuitEl.style.width = shortcCount;
+let shortcColor = shortcircuitEl.style.backgroundColor = shortcircuitColor;
+
+let opencCount = opencircuitEl.textContent = (opencircuitCount / 100) + "%";
+let opencChart = opencircuitEl.style.width = opencCount;
+let opencColor = opencircuitEl.style.backgroundColor = opencircuitColor;
+
+let panelfCount = panelfailureEl.textContent = (panelfailureCount / 100) + "%";
+let panelfChart = panelfailureEl.style.width = panelfCount;
+let panelfColor = panelfailureEl.style.backgroundColor = panelfailureColor;
+
+let modulCount = moduleEl.textContent = (moduleCount / 100) + "%";
+let modulChart = moduleEl.style.width = modulCount;
+let modulColor = moduleEl.style.backgroundColor = moduleColor;
+
+let tablCount = tableEl.textContent = (tableCount / 100) + "%";
+let tablChart = tableEl.style.width = tablCount;
+let tablColor = tableEl.style.backgroundColor = tableColor;
+
+let piCount = pidEl.textContent = (pidCount / 100) + "%";
+let piChart = pidEl.style.width = piCount;
+let piColor = pidEl.style.backgroundColor = pidColor;
